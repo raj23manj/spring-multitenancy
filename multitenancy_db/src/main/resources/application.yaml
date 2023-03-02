@@ -1,33 +1,35 @@
-#spring:
-#  flyway:
-#    enabled: false
-#tenants:
-#  datasources:
-#    vw:
-#      jdbcUrl: jdbc:postgresql://localhost:5432/vm?useSSL=false
-#      driverClassName: org.postgresql.Driver
-#      username: sa
-#      password: password
-#    bmw:
-#      jdbcUrl: jdbc:postgresql://localhost:5432/bmw?useSSL=false
-#      driverClassName: org.postgresql.Driver
-#      username: sa
-#      password: password
-
 spring:
   jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
+    database-platform:  org.hibernate.dialect.PostgreSQLDialect
   flyway:
     enabled: false
 tenants:
   datasources:
     vw:
-      jdbcUrl: jdbc:h2:mem:vw
-      driverClassName: org.h2.Driver
+      jdbcUrl: jdbc:postgresql://localhost:5432/vm?useSSL=false
+      driverClassName: org.postgresql.Driver
       username: sa
       password: password
     bmw:
-      jdbcUrl: jdbc:h2:mem:bmw
-      driverClassName: org.h2.Driver
+      jdbcUrl: jdbc:postgresql://localhost:5432/bmw?useSSL=false
+      driverClassName: org.postgresql.Driver
       username: sa
       password: password
+
+#spring:
+#  jpa:
+#    database-platform: org.hibernate.dialect.H2Dialect
+#  flyway:
+#    enabled: false
+#tenants:
+#  datasources:
+#    vw:
+#      jdbcUrl: jdbc:h2:mem:vw
+#      driverClassName: org.h2.Driver
+#      username: sa
+#      password: password
+#    bmw:
+#      jdbcUrl: jdbc:h2:mem:bmw
+#      driverClassName: org.h2.Driver
+#      username: sa
+#      password: password
